@@ -1,5 +1,6 @@
 package exceptionEX;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ex1 {
@@ -8,10 +9,11 @@ public class ex1 {
 		Scanner sc=new Scanner(System.in);
 		int[] x=new int[3];
 		System.out.println("輸入索引");
-		int n=sc.nextInt();
+		
 		
 		try
 		{
+			int n=sc.nextInt();
 			x[n]=100;// new ArrayIndexOutOfBoundsException();
 		
 		
@@ -23,6 +25,10 @@ public class ex1 {
 		catch(ArrayIndexOutOfBoundsException e)//=?
 		{
 			System.out.println("0~2");
+		}
+		catch(InputMismatchException e)
+		{
+			System.out.println("須為整數");
 		}
 		
 
